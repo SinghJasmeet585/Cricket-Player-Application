@@ -81,51 +81,21 @@ export default function Card(props) {
       fav: { pid: props.pid, name: props.name }
     }
 
-    console.log("card pid", props.pid)
-    console.log(" localStorage.getItem('username')", localStorage.getItem('username'))
+    // console.log("card pid", props.pid)
+    // console.log(" localStorage.getItem('username')", localStorage.getItem('username'))
 
     axios.post('http://localhost:5000/favPlayers/add', data)
       .then((res) => {
-        console.log(res)
+        // console.log(res)
       })
       .catch(err => {
-        console.log(err)
+        // console.log(err)
       })
-    // console.log("save");
-    // const playerCard = {
-    //   id: props.pid,
-    //   name: props.name
-    // }
-    // console.log("I am here");
-    //console.log(playerDetails);
-    // props.playerDetails(playerCard);
+   
   };
 
   return (
-    //     <div className="card-inline" style={{width:"17rem" ,border:"1px solid black" ,margin:"5px" }}>
-    //     <div className="card-body ">
-    //     <div className="card-image-myimg" ><img className="myimg" src={props.urlToImage}/> </div>
-    //     <p className="card-title" >{props.title}</p>
-    //     <p className="card-author"><b>{props.author}</b></p>
-    //     <button type="submit" className="btn btn-primary" onClick={() => {
-    //                 saveFav();
-    //             }}>
-    //                 Add to Favourites
-    //     </button>
-    //     <button type="submit" className="btn btn-primary" onClick={() => {
-    //                 saveFav();
-    //             }}>
-    //                 Stats
-    //     </button>
-    //   </div>
-    // </div>
-    //   <div class="card" style="width: 18rem;">
-    // <img class="card-img-top" src="..." alt="Card image cap">
-    // <div class="card-body">
-    //   <h5 class="card-title">Card title</h5>
-    //   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    //   <a href="#" class="btn btn-primary">Go somewhere</a>
-    // </div>
+ 
 
     <div className="card grid-item shadow">
       {isLoading && <Loading type="Grid" color="#E2E2E2" height={200} width={200} />}

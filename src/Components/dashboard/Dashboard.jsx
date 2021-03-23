@@ -8,21 +8,21 @@ export default function Dashboard() {
   const [playerdb, setPlayerdb] = useState([]);
   // const Api=b909d678e82f454a84d8487e1da59893;
   useEffect(() => {
-    console.log('Inside the useEffect')
+    // console.log('Inside the useEffect')
     axios.get('http://localhost:5000/dashPlayers/')
       .then((res) => {
-        console.log("Hell")
-        console.log(res.data)
+        // console.log("Hell")
+        // console.log(res.data)
         setTrending(res.data);
       })
       .catch(err => {
-        console.log(err)
+        // console.log(err)
       })
   }, []);
 
 
   const savePlayer = (playerCard) => {
-    console.log("I am in the dashboard");
+    // console.log("I am in the dashboard");
     axios
       .post('http://localhost:3100/news', playerCard, {
         headers: { 'Content-Type': 'application/json' },
@@ -34,29 +34,11 @@ export default function Dashboard() {
         }
       })
       .catch(function (error) {
-        console.log(error);
+        // console.log(error);
       });
   };
   return (
-    // <div className='container'>
-    // <div className='row' style={{width:"max"}}>
-    //             {trending.map((news) => (
-    //                 <Card
-    //                 urlToImage={news.urlToImage}
-    //                 title={news.title}
-    //                 author={news.author}
-    //                 readLater={readLater}
-    //                 description={news.description}
-    //                 url={news.url}
-    //                 />
-    //             ))
-    //             }
-    //         {/* <div className="col-md-6 mt-4">
-    //                 <AddContact addContact={saveContact}/>
-    //         </div> */}
-
-    // </div>
-    // </div>
+    
     <div className="dashboard-container">
       <h1>Recommended Players</h1>
       <div className="displayContainer">

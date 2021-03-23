@@ -22,22 +22,22 @@ export default function Login() {
 
 
     const userData = { username, password };
-    console.log(userData)
+    // console.log(userData)
     axios.post('http://localhost:5000/users/login', userData)
       .then((res) => {
-        console.log("res : ", res)
+        // console.log("res : ", res)
         setLoggedUser(username);
-        console.log("res.data : ", res.data)
+        // console.log("res.data : ", res.data)
         localStorage.setItem('username', res.data);
         history.push("/dashboard");
         const userGetItem = localStorage.getItem('username');
-        console.log('userGetItem : ', userGetItem)
+        // console.log('userGetItem : ', userGetItem)
       })
       .catch(err => {
-        console.log(err.message);
+        // console.log(err.message);
         alert('Not a valid user');
       })
-    console.log("Hello")
+    // console.log("Hello")
 
   }
 

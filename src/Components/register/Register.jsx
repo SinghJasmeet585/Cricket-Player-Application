@@ -20,35 +20,20 @@ export default function Register() {
 	const registerSubmit = e => {
 		e.preventDefault();
 		const user = { name, username, password, imageUrl };
-		console.log(user)
+		// console.log(user)
 
 		axios.post('http://localhost:5000/users/add', user)
 			.then((res) => {
-				console.log("Hello")
-				console.log(res);
-				console.log("res")
+	
 				history.push("/login");
 				alert('Registration Done!!! Login');
 			})
 			.catch(err => {
-				console.log(err);
+				// console.log(err);
 				alert('User Already Exists');
 			})
 
-		// axios.post('http://localhost:5000/users/add', user)
-		//     .then(res => console.log(res.data));
-
-		// axios.get('http://localhost:5000/dashPlayers/')
-		//     .then((res) => {
-		//         console.log("Hell")
-		//         console.log(res.data)
-		//     })
-		//     .catch(err=>{
-		//         console.log(err)
-		//     })
-
-
-		console.log("Register clicked")
+		
 	}
 
 	if (loggedUser !== null) {

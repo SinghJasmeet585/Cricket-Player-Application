@@ -27,7 +27,7 @@ router.route('/add').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
     })
     .catch(err => {
-      console.log("Error in adding found");
+      // console.log("Error in adding found");
       return res.status(400).send({
         message: 'This is an error!'
       });
@@ -44,21 +44,18 @@ router.route('/login').post(async (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
 
-  console.log("Inside Login")
 
   const foundUser = await User.findAndValidate(username, password)
   if (foundUser) {
-    console.log("User Exists")
-    //  res.send({'username': username}); 
+
     res.send(username);
   } else {
-    console.log("False Login")
+
     res.status(400).send({
       message: 'This is an error!'
     });
   }
-  // console.log("req.session.user_id",req.session)
-  // console.log("req.session.user_id",req.session.user_id)
+
 });
 
 module.exports = router;

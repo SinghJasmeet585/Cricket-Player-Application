@@ -35,11 +35,11 @@ app.use(session({ secret: 'notagoodsecret' }))
 
 mongoose.connect('mongodb://localhost:27017/cdPlay', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
-        console.log("Mongo connection open")
+        // console.log("Mongo connection open")
     })
     .catch(err => {
-        console.log("Error")
-        console.log(err)
+        // console.log("Error")
+        // console.log(err)
     })
 
 

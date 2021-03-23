@@ -37,12 +37,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 export default function FavCard(props) {
-	// const[description,setdescription]=useState('');
-	// const[id,setid]=useState('');
-	// useEffect(() => {
-	//  setdescription(props.description);
-	//  setid(props.id);
-	//     });
+	
 	const classes = useStyles();
 	const [open, setOpen] = useState(false);
 
@@ -64,7 +59,7 @@ export default function FavCard(props) {
 			.then((res) => {
 				//console.log(res.data);
 
-				console.log(res.data);
+				// console.log(res.data);
 				setPlayerDetails(res.data);
 				setPlayerBatting(res.data.data.batting);
 				setPlayerBowling(res.data.data.bowling);
@@ -82,29 +77,13 @@ export default function FavCard(props) {
 	//console.log(playerBattingODI);
 	const delFav = () => {
 
-		console.log("Inside delFav favorite Card")
+		// console.log("Inside delFav favorite Card")
 		//console.log(playerDetails);
-		console.log(props.pid)
+		// console.log(props.pid)
 		props.delFav(props.pid);
 	};
 	return (
-		//     <div className="card-inline" style={{width:"17rem" ,border:"1px solid black" ,margin:"5px" }}>
-		//     <div className="card-body ">
-		//     <div className="card-image-myimg" ><img className="myimg" src={props.urlToImage}/> </div>
-		//     <p className="card-title" >{props.title}</p>
-		//     <p className="card-author"><b>{props.author}</b></p>
-		//     <button type="submit" className="btn btn-primary" onClick={() => {
-		//                 saveFav();
-		//             }}>
-		//                 Add to Favourites
-		//     </button>
-		//     <button type="submit" className="btn btn-primary" onClick={() => {
-		//                 saveFav();
-		//             }}>
-		//                 Stats
-		//     </button>
-		//   </div>
-		// </div>
+		
 		<div className="card grid-item shadow">
 			{isLoading && <Loading type="Grid" color="#E2E2E2" height={200} width={200} />}
 			{isLoading === false &&

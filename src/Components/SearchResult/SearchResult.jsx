@@ -18,17 +18,17 @@ export default function SearchResult(props) {
 				"name": `${playername}`
 			}
 		}).then((res) => {
-			console.log(res.data.data);
+			// console.log(res.data.data);
 			setSearchResult(res.data.data);
 		}).catch((err) => {
-			console.error(err);
+			// console.error(err);
 		}).finally(res => {
 			setIsLoading(false);
 		})
 	}, [props.location]);
 
 	const savePlayer = (playerCard) => {
-		console.log("I am in the Search Result");
+		// console.log("I am in the Search Result");
 		axios
 			.post('http://localhost:3100/news', playerCard, {
 				headers: { 'Content-Type': 'application/json' },
@@ -36,12 +36,12 @@ export default function SearchResult(props) {
 			.then(function (response) {
 				if (response.status === 201) {
 					// [...contact, response.data]
-					console.log("Player Added to fav")
+					// console.log("Player Added to fav")
 					//setPlayerdb([...playerdb, response.data]);
 				}
 			})
 			.catch(function (error) {
-				console.log(error);
+				// console.log(error);
 			});
 	};
 
